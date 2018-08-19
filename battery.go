@@ -43,7 +43,8 @@ func (b *Battery) GetCapacityPercent() float64 {
 	return float64(100) * float64(b.GetEnergyNow()) / float64(b.GetEnergyFull())
 }
 
-// GetCapacityTime returns the time left in hours and minutes of the battery
+// GetCapacityTime returns the time left in hours, minutes, and seconds of the
+// battery
 func (b *Battery) GetCapacityTime() (int64, int64, int64) {
 	p := float64(b.GetPowerNow())
 	if p == 0 {

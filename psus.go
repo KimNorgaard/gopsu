@@ -43,7 +43,8 @@ func (psus *PowerSupplies) GetBatteriesCapacityPercent() float64 {
 	return (float64(100) * float64(psus.GetBatteriesEnergyNow()) / float64(psus.GetBatteriesEnergyFull()))
 }
 
-// GetBatteriesCapacityTime returns the capacity in time left in seconds for all batteries
+// GetBatteriesCapacityTime returns the capacity in time left in hours, minutes
+// and seconds for all batteries
 func (psus *PowerSupplies) GetBatteriesCapacityTime() (int64, int64, int64) {
 	p := float64(psus.GetBatteriesPowerNow())
 	if p == 0 {
